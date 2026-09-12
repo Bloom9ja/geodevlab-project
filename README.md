@@ -10,10 +10,10 @@ Will be built over twelve months as part of GeoDev Lab Africa. See [project-brie
 
 | Dataset | Provider |
 |---|---|
-| Odeda LGA boundary | HDX COD-AB Nigeria |
+| Odeda LGA boundary | GRID3 Nigeria (fallback: HDX COD-AB) |
 | Settlements | GRID3 (Ogun State extract) |
 | Primary schools | GRID3 Nigeria Schools |
-| Road network | OpenStreetMap (HOTOSM export) |
+| Road network | OpenStreetMap (via QuickOSM) |
 | Population (age-structured) | WorldPop |
 
 Full provenance (versions, download dates, licenses) will be recorded in `docs/data-sources.md` as each dataset is acquired.
