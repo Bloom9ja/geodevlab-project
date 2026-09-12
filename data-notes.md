@@ -1,6 +1,6 @@
 # Data Notes
  
-Running log of every dataset used in this project
+Running log of every dataset used in this project so far
  
 ---
  
