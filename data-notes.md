@@ -36,3 +36,14 @@ Running log of every dataset used in this project so far
 - Feature count: 2,642
 - Values present in highway: footway, path, primary, primary_link, residential, secondary, service, tertiary, track, trunk, trunk_link, unclassified
 - Coverage notes: visually complete for the area
+
+## CRS and reprojection
+- All source layers (boundary, roads) arrived in EPSG:4326 (WGS 84)
+- Study area: Odeda LGA boundary, exported from the GRID3 Operational LGA layer
+- Reprojected to EPSG:32631 (WGS 84 / UTM Zone 31N); correct zone for western Nigeria per project rule
+- Area check: Odeda boundary calculated at approximately 1319.879 km² after reprojection, compared against a commonly cited figure of ~1,560 km² for Odeda LGA (unverified against an authoritative source. Worth checking against the GRID3 dataset's own documentation if precision matters later
+- Also noted: initial $area calculation on the unprojected (EPSG:4326) layer returned a real-world value in square meters rather than square degrees; QGIS's ellipsoidal area measurement setting was active, which meant the "wrong" area wasn't actually wrong in magnitude, just not yet the deliberate exercise the pack expected
+- Working files saved in data/processed/; raw/ files untouched
+- All source layers (boundary, roads) arrived in EPSG:4326 (WGS 84)
+- Study area: Odeda LGA boundary, exported from the GRID3 Operational LGA layer
+- Roads (clipped to Odeda via QuickOSM + manual Clip) and the settlements were both reprojected to EPSG:32631 (WGS 84 / UTM Zone 31N)
