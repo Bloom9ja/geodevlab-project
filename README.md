@@ -20,7 +20,7 @@ Across 1,528 ordinary settlements in Odeda LGA, the median straight-line distanc
 
 [month-1-summary.md](./month-1-summary.md) — the spatial operation run (nearest-distance join, settlements to schools), what was expected versus what was found, and the genuine data-quality discovery made along the way (large settlement polygons that contain multiple schools, producing tied zero-distance matches).
 
-![Distance from settlements to nearest primary school, Odeda LGA](./odeda_accessibility_map.png)
+![Distance from settlements to nearest primary school, Odeda LGA](./Odeda_Accessibility_Map.jpeg)
 
 ## Data Sources (summary)
 
