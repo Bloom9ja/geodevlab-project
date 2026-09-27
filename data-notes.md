@@ -37,16 +37,24 @@ Running log of every dataset used in this project so far
 - Values present in highway: footway, path, primary, primary_link, residential, secondary, service, tertiary, track, trunk, trunk_link, unclassified
 - Coverage notes: visually complete for the area
 
-## CRS and reprojection
-- All source layers (boundary, roads) arrived in EPSG:4326 (WGS 84)
-- Study area: Odeda LGA boundary, exported from the GRID3 Operational LGA layer
-- Reprojected to EPSG:32631 (WGS 84 / UTM Zone 31N); correct zone for western Nigeria per project rule
-- Area check: Odeda boundary calculated at approximately 1319.879 km² after reprojection, compared against a commonly cited figure of ~1,560 km² for Odeda LGA (unverified against an authoritative source. Worth checking against the GRID3 dataset's own documentation if precision matters later
-- Also noted: initial $area calculation on the unprojected (EPSG:4326) layer returned a real-world value in square meters rather than square degrees; QGIS's ellipsoidal area measurement setting was active, which meant the "wrong" area wasn't actually wrong in magnitude, just not yet the deliberate exercise the pack expected
-- Working files saved in data/processed/; raw/ files untouched
-- All source layers (boundary, roads) arrived in EPSG:4326 (WGS 84)
-- Study area: Odeda LGA boundary, exported from the GRID3 Operational LGA layer
-- Roads (clipped to Odeda via QuickOSM + manual Clip) and the settlements were both reprojected to EPSG:32631 (WGS 84 / UTM Zone 31N)
+## Week 3 — CRS, Reprojection, and Quality Checks
+ 
+**CRS chosen:** EPSG:32631 (WGS 84 / UTM Zone 31N). Odeda LGA sits in western Nigeria (roughly 7.2°N, 3.5°E), and the project's own CRS rule assigns EPSG:32631 to western Nigeria, EPSG:32632 to central/eastern.
+ 
+**What was reprojected and clipped:** all source layers (boundary, settlements, roads, schools) arrived in EPSG:4326 (WGS 84). The Odeda LGA boundary was isolated from the national GRID3 layer as its own AOI. Roads were pulled via QuickOSM directly to Odeda's extent, then clipped again to the exact boundary polygon (QuickOSM's "Layer Extent" pulls a bounding box, not the true polygon shape, so a manual clip was still required). All four layers — boundary, settlements, roads, schools — were then reprojected to EPSG:32631 and saved into `data/processed/`.
+ 
+**Five quality checks and results:**
+ 
+1. **CRS stated for every layer.** Boundary, settlements, roads, and schools all confirmed as EPSG:32631 after reprojection (checked via Layer Properties → Information on each). Decision: no further action needed — all four consistent.
+2. **A study-area file exists containing only the AOI.** `AOI_utm31.gpkg` contains exactly one feature — Odeda LGA. Decision: confirmed, used as the overlay layer for every subsequent clip.
+3. **Every layer clipped to the AOI and reprojected, saved in `data/processed/`.** Confirmed for boundary and roads at this stage (settlements and schools were reprojected in this same step but clipped/finalized during Week 4's analysis work, documented further down in this file). Decision: accepted as sufficient for Week 3's boundary+roads deliverable; settlements/schools reprojection carried forward and re-verified in Week 4.
+4. **`data/raw/` left unmodified.** Confirmed — all reprojected and clipped outputs were saved as new files into `data/processed/`, nothing in `raw/` was opened for editing. Decision: no action needed.
+5. **Area value sanity check.** Odeda's boundary area calculated at approximately 1,320 km² after reprojection, against a commonly cited reference figure of ~1,560 km² for Odeda LGA (this reference traces to an older Wikipedia infobox, not a primary GRID3/NBS source, so it's a ballpark check, not an authoritative one). Decision: **flagged, not silently accepted.** The ~15% gap is plausibly explained by differing boundary vintages/precision between the GRID3 file used here and whatever source the reference figure originally came from, rather than a reprojection error — the CRS and reprojection steps themselves were separately verified as correct (EPSG confirmed on the output layer, and the area order-of-magnitude is right for an LGA, not off by a factor of 1,000 as a metres/degrees mixup would produce). This is left as an open item to revisit if the final analysis needs a more precise area figure, rather than treated as resolved.
+**Problems found and how they were handled:**
+- QGIS's Field Calculator repeatedly failed with "could not add the new field to the provider" when creating a new field directly, even on a GeoPackage layer. **Fixed**, not just flagged — worked around by adding the field manually via the attribute table's "New Field" button first, then using Field Calculator only to update that existing field's values.
+- The initial `$area` calculation on the unprojected (EPSG:4326) layer returned a real-world value in square meters rather than the expected tiny square-degrees number, because QGIS's ellipsoidal area measurement setting was active. **Flagged**, not an error requiring a fix — noted so that any future `$area` output on this project is not blindly trusted without first checking that setting.
+**Where the analysis-ready file lives:** `data/processed/AOI_utm31.gpkg` (AOI, EPSG:32631) and `data/processed/Roads_utm31.gpkg` (roads, clipped and reprojected, EPSG:32631). 
+---
 
 - ## Multipart to Singleparts (Settlements)
 - Operation: Vector → Geometry Tools → Multipart to Singleparts
