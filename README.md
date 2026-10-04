@@ -37,3 +37,7 @@ Full provenance (versions, download dates, licenses) is in [data-notes.md](./dat
 ## Status and Next Steps
 
 Month 1 complete. Straight-line distance is a deliberate placeholder for the project's actual road-based question — road-network routing, a defined "inadequate access" threshold, and treatment of the four excluded urban-core settlements are the open items carried into Month 2 (see the "What data I still need" section of [month-1-summary.md](./month-1-summary.md)).
+
+## Month 2: development environment and early python
+
+- Week 5: set up python, VS Code and the terminal. hello.py runs.
