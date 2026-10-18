@@ -42,3 +42,4 @@ Month 1 complete. Straight-line distance is a deliberate placeholder for the pro
 
 - Week 5: set up python, VS Code and the terminal. hello.py runs.
 - Week 6: set up the project with uv and added pandas. check.py prints the pandas version
+- Week 7: analyse.py reads wards.csv, convers each area and classifies each ward.
