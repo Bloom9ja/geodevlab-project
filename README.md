@@ -44,3 +44,8 @@ Month 1 complete. Straight-line distance is a deliberate placeholder for the pro
 - Week 6: set up the project with uv and added pandas. check.py prints the pandas version
 - Week 7: analyse.py reads wards.csv, convers each area and classifies each ward.
 - Week 8: inspect_data.py summarises area and population in my Odeda settlements data.
+- Week 9: summary.py summarizes and refactors week 8 code.
+
+  ### Month 2 reflection
+- This month introduced me to what it means to code.
+- From understanding data structures to functions and even exploring data. Great insight.
