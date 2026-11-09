@@ -49,3 +49,7 @@ Month 1 complete. Straight-line distance is a deliberate placeholder for the pro
   ### Month 2 reflection
 - This month introduced me to what it means to code.
 - From understanding data structures to functions and even exploring data. Great insight.
+
+## Month 3: Geospatial Python Automation
+
+- Week 10: Geopandas. Loaded, checked, joined and mapped my wards layer in code.
