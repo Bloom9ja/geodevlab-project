@@ -53,3 +53,4 @@ Month 1 complete. Straight-line distance is a deliberate placeholder for the pro
 ## Month 3: Geospatial Python Automation
 
 - Week 10: Geopandas. Loaded, checked, joined and mapped my wards layer in code.
+- Week 11: CRS and spatial operations. Reprojected to EPSG:32631 and measured the length of road
