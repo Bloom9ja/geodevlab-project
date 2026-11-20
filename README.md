@@ -54,3 +54,4 @@ Month 1 complete. Straight-line distance is a deliberate placeholder for the pro
 
 - Week 10: Geopandas. Loaded, checked, joined and mapped my wards layer in code.
 - Week 11: CRS and spatial operations. Reprojected to EPSG:32631 and measured the length of road
+- Week 12: Rasters. Computed index for the study area and summarised it per polygon.
