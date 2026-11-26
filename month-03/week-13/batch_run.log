@@ -1,0 +1,14 @@
+2026-11-26 06:39:45,692 INFO Converted akinyele.csv: 29 points
+2026-11-26 06:39:45,697 ERROR Failed on egbeda.csv: missing columns: ['latitude', 'longitude']
+2026-11-26 06:39:45,820 INFO Converted ibadan_north.csv: 28 points
+2026-11-26 06:39:45,957 INFO Converted ibadan_north_east.csv: 21 points
+2026-11-26 06:39:46,057 INFO Converted ibadan_south_west.csv: 17 points
+2026-11-26 06:39:46,157 INFO Converted ido.csv: 10 points
+2026-11-26 06:39:46,169 INFO Finished 6 files in 1 seconds
+2026-11-26 06:45:24,822 INFO Skipping akinyele.csv, output already exists
+2026-11-26 06:45:25,098 INFO Converted egbeda.csv: 15 points
+2026-11-26 06:45:25,100 INFO Skipping ibadan_north.csv, output already exists
+2026-11-26 06:45:25,101 INFO Skipping ibadan_north_east.csv, output already exists
+2026-11-26 06:45:25,101 INFO Skipping ibadan_south_west.csv, output already exists
+2026-11-26 06:45:25,102 INFO Skipping ido.csv, output already exists
+2026-11-26 06:45:25,108 INFO Finished 6 files in 0 seconds
